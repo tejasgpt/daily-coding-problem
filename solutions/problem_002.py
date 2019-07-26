@@ -1,29 +1,17 @@
 def get_factors(array):
-    cumulative_product = 1
-    right_prod_array = list()
-    for num in array:
-        cumulative_product *= num
-        right_prod_array.append(cumulative_product)
-
-    cumulative_product = 1
-    left_prod_array = list()
-    for num in array[::-1]:
-        cumulative_product *= num
-        left_prod_array.append(cumulative_product)
-    left_prod_array = left_prod_array[::-1]
-
-    output_array = list()
-    for i in range(len(array)):
-        num = None
-        if i == 0:
-            num = left_prod_array[i + 1]
-        elif i == len(array) - 1:
-            num = right_prod_array[i - 1]
-        else:
-            num = right_prod_array[i - 1] * left_prod_array[i + 1]
-        output_array.append(num)
+    factor = [0] * len(array)
+    factor[0] = 1
     
-    return output_array
+    for i in range(1,len(array)):
+        factor[i] = array[i-1] * factor[i-1]
+        
+    base = 1
+    
+    for j in range(len(array)-1,-1,-1):
+        factor[j] *= base
+        base *= array[j]
+    
+    return factor
 
 
 assert get_factors([1, 2, 3, 4, 5]) == [120, 60, 40, 30, 24]
