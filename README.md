@@ -67,7 +67,7 @@ Given this implementation of cons:
 def cons(a, b):
     def pair(f):
         return f(a, b)
-    return pair
+    return pair 
     
 Implement car and cdr.
 
