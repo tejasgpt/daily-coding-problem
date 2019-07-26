@@ -1,11 +1,19 @@
 def check_sums(array, k):
-    potential_solutions = set()
-    for num in array:
-        if num in potential_solutions:
-            return True
-        potential_solutions.add(k - num)
+    if not array and not k:
+        return True
     
+    if not array or not k:
+        return False
+    
+    maps = dict()
+    
+    for i in range(len(array)):
+        if k - array[i] in maps:
+            return True
+        else:
+            maps[array[i]] = i
     return False
+    
 
 
 assert not check_sums([], 17)
