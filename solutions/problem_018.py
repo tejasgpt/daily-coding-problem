@@ -1,34 +1,22 @@
-from collections import deque
-
-
-def get_sliding_max(a, k):
-
-    window_max_elements = list()
-
-    if not a:
-        return None
-    if len(a) <= k:
-        return max(a)
-
-    dq = deque()
-
-    for i in range(k):
-        while dq and a[dq[-1]] < a[i]:
-            dq.pop()
-        dq.append(i)
-    window_max_elements.append(a[dq[0]])
-
-    for i in range(k, len(a)):
-        while dq and dq[0] <= i - k:
-            dq.popleft()
-
-        while dq and a[dq[-1]] < a[i]:
-            dq.pop()
-        dq.append(i)
-
-        window_max_elements.append(a[dq[0]])
-
-    return window_max_elements
+def get_sliding_max(nums, k):
+    windmax = []
+    if not nums or not k:
+        return windmax
+    
+    queue = collections.deque()
+    
+    for i in range(len(nums)):
+        while queue and nums[queue[-1]] < nums[i]:
+            queue.pop()
+        queue.append(i)
+        
+        if queue[0] == i - k:
+            queue.popleft()
+            
+        if i >= k - 1:
+            windmax.append(nums[queue[0]])
+            
+    return windmax
 
 
 assert get_sliding_max([10, 5, 2, 7, 8, 7], 3) == [10, 7, 8, 8]
