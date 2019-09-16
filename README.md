@@ -165,6 +165,8 @@ Hint: Try preprocessing the dictionary into a more efficient data structure to s
 
 #### Problem 12
 
+Leetcode 70 - Climbing Stairs
+
 This problem was asked by Amazon.
 
 There exists a staircase with N steps, and you can climb up either 1 or 2 steps at a time. Given N, write a function that returns the number of unique ways you can climb the staircase. The order of the steps matters.
@@ -186,6 +188,8 @@ What if, instead of being able to climb 1 or 2 steps at a time, you could climb 
 ---
 
 #### Problem 13
+
+Leetcode 340 - Longest Substring with at most K distinct characters
 
 This problem was asked by Amazon.
 
