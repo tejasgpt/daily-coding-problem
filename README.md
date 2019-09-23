@@ -662,6 +662,8 @@ For example, given `S = [12, 1, 61, 5, 9, 2]` and `k = 24`, return [12, 9, 2, 1]
 
 #### Problem 43
 
+Leetcode 716 - MaxStack
+
 This problem was asked by Amazon.
 
 Implement a stack that has the following methods:
@@ -703,6 +705,8 @@ Using a function rand5() that returns an integer from 1 to 5 (inclusive) with un
 ---
 
 #### Problem 46
+
+Leetcode 5 - Longest Palindromic Substring
 
 This problem was asked by Amazon.
 
